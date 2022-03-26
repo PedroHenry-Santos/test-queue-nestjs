@@ -1,0 +1,39 @@
+version: "3"
+services:
+  application:
+    container_name: api-desapego-amigo
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    user: root
+    expose:
+      - 3000
+    env_file:
+      - docker/api/docker.env
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/usr/src/app
+    depends_on:
+      - database
+    networks:
+      - nesjs-network
+
+  cache:
+    image: bitnami/redis:latest
+    container_name: redis-desaepgo
+    ports:
+      -  6379:6379
+    environment:
+      - REDIS_PASSWORD=docker
+    volumes:
+      - ./redis/data:/usr/local/redis/data
+      - ./redis/redis.log:/usr/local/redis/redis.log
+    
+    networks:
+      - nesjs-network
+    restart: always
+
+networks:
+  nesjs-network:
+    driver: bridge

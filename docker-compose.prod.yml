@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  application:
+    container_name: api-desapego-amigo
+    restart: "always"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    user: root
+    expose:
+      - ${PORT}
+    ports:
+      - ${PORT}:${PORT}
+    env_file:
+      - /etc/environment
+    volumes:
+      - ./:/usr/src/app
+    
+    

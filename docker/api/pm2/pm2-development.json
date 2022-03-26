@@ -1,0 +1,29 @@
+{
+  "apps": [
+    {
+      "name"        : "api",
+      "script"      : "dist/main.js",
+      "instances"   : 1,
+      "exec_mode"   : "cluster",
+      "watch"       : false,
+      "merge_logs"  : true,
+      "cwd"         : "/usr/src/app/",
+      "env_production" : {
+        "NODE_ENV": process.env.NODE_ENV,
+        "PORT"    : process.env.PORT,
+
+        "CORS_ORIGINS": process.env.CORS_ORIGINS,
+
+        "THROTTLE_TTL": process.env.THROTTLE_TTL,
+        "THROTTLE_LIMIT": process.env.THROTTLE_LIMIT,
+
+        "PM2_PUBLIC_KEY": process.env.PM2_PUBLIC_KEY,
+        "PM2_SECRET_KEY": process.env.PM2_SECRET_KEY,
+
+        "REDIS_HOST:": process.env.REDIS_HOST,
+        "REDIS_PORT": process.env.REDIS_PORT,
+        "REDIS_PASSWORD": process.env.REDIS_PASSWORD
+      }
+    }
+  ]
+}

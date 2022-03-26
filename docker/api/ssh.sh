@@ -1,0 +1,1 @@
+bash -c "clear && docker exec -it api-desapego-amigo bash"
