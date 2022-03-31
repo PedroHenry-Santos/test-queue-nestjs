@@ -6,30 +6,33 @@
 <p align="center">
 
 
-## Description
+## Descrição
 
 API para testes e estudo de infraestrutura na AWS com VPC, EC2 e ElasticCache.
 
-## Installation
+## Instalação
 
 ```bash
 $ git clone git@github.com:PedroHenry-Santos/test-queue-nestjs.git
 ```
 
-## Running the app
+## Executando app
 
 ```bash
 $ chmod +x ./setup.sh
 
-$ yarn install
-
 $ make up
 ```
+O modelo de variáveis ambientes estão no arquivo ``docker/api/docker.env``. 
 
-## Support
+Em produção, basta dentro da sua instância ec2 utilizar os seguinte comando:
+```bash
+$ sudo sudo vi /etc/environment
+```
+Apos insira os valores das variáveis ambiente (Basta copiar todos os valores e colar ou apartar ``i`` e digitar), depois de editar basta apertar ``ESC`` de digitar ``:wq``. Apos reinicie a instância pelo painel da AWS e entre novamente. Basta atualizar o sistema, clonar o projeto e executar ele conforme mencionado no inicio.
 
-Para mais informações, entre em contato através do nosso [suporte]().
+> Obs.: A instância utilizada foi a ``Amazon Linux 2 AMI`` portanto os script de atalho podem não funcionar em demais imagens.
 
-## Stay in touch
+## Contato
 
 - Author - [Pedro Santos](https://www.linkedin.com/in/pedro-henry-santos/)
