@@ -15,7 +15,6 @@ then
 else
   echo "Production MODE"
   # pm2 start /usr/src/app/docker/api/pm2/pm2-production.json
-
   node dist/main.js
 fi
 

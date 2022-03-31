@@ -3,7 +3,7 @@
 if [ "$NODE_ENV" == "production" ];
 then
   echo 'Start up Docker in Production Mode...'
-  cd /home/ec2-user/nois-invest
+  cd /app/test-queue-nestjs
 fi
 
 # STDERR log function
